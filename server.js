@@ -2,6 +2,8 @@
 const express = require('express')
 // const bodyParser = require('body-parser')
 
+const cors = require("cors");
+
 
 // Create an Express.js instance:
 const app = express()
