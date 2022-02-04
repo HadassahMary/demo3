@@ -7,6 +7,7 @@ const cors = require("cors");
 
 // Create an Express.js instance:
 const app = express()
+app.use(cors());
 
 // config Express.js
 app.use(express.json())
@@ -15,6 +16,12 @@ app.use ((req,res,next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 })
+
+app.get("/", (req, res, next) => {
+
+    return res.sendFile(__dirname + "/fetch-post.html");
+    
+    });
 
 // connect to MongoDB
 const MongoClient = require('mongodb').MongoClient;
